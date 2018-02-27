@@ -20,11 +20,14 @@ class StoryStore extends ReduceStore {
 }
 
 let taskList = TaskList.empty()
-.add(Task.create('TODOたすく１','たすくのないよう１',5,'TODO'))
-.add(Task.create('DOINGたすく２','たすくのないよう２',7,'DOING'))
-.add(Task.create('DONEたすく３','たすくのないよう３',0.5,'DONE'))
-.add(Task.create('DONEたすく4','たすくのないよう4',8,'DONE'))
-.add(Task.create('DONEたすく5','たすくのないよう5',1,'TODO'))
+.add(Task.create('たすく１','たすくのないよう１',5,'TODO'))
+.add(Task.create('たすく２','たすくのないよう２',7,'DOING'))
+.add(Task.create('たすく３','たすくのないよう３',0.5,'DONE'))
+.add(Task.create('たすく4','たすくのないよう4',8,'TODO'))
+.add(Task.create('たすく5','たすくのないよう5',1,'TODO'))
+.add(Task.create('たすく6','たすくのないよう6',2,'TODO'))
+.add(Task.create('たすく7','たすくのないよう7',3,'TODO'))
+.add(Task.create('たすく8','たすくのないよう8',4,'TODO'))
 
 export default new StoryStore(RascaloidDispatcher);
 

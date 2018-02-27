@@ -36,6 +36,9 @@ class Task {
     static create( subject, description, estimated_hours, status ) {
         return new Task(++Task.idGenerator, subject, description, estimated_hours, status);
     }
+    setStatus(status) {
+        return new Task(this.id, this.subject, this.description, this.estimated_hours, status)
+    }
 }
 
 class TaskList {
