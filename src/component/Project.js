@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-export default ({ projectId }) => (
+export default ({ projectId,iterations }) => (
     <div>
         <h1>Project {projectId}</h1>
         <ul>
@@ -9,6 +9,10 @@ export default ({ projectId }) => (
             <li>TODO イテレーションの一覧を表示する</li>
             <li>TODO イテレーション詳細へリンクする</li>
         </ul>
-        <p><Link to={'/projects/' + projectId + '/iterations/456'}>XXX iteration</Link></p>
+        {iterations.list.map(prop => 
+                <li key={prop.id}>
+                    <Link to={'/projects/' + projectId + '/iterations/' + prop.id}>{prop.content}</Link>
+                </li>
+            )}
     </div>
 );
