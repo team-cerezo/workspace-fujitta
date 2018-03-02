@@ -30,4 +30,3 @@ let taskList = TaskList.empty()
 .add(Task.create('たすく8','たすくのないよう8',4,'TODO'))
 
 export default new StoryStore(RascaloidDispatcher);
-

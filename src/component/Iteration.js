@@ -1,6 +1,5 @@
 import React from 'react';
-import { Panel } from 'react-bootstrap';
-import { Grid, Segment, Flag, Menu, Button, Card, Header } from 'semantic-ui-react'
+import { Grid, Menu, Card, Header } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
   
 
@@ -17,62 +16,62 @@ export default ({ projectId, iterationId, Stories}) => (
             <ul key={prop.id}>
                 <Header as='h1' content={prop.content} subheader='' />
                 <Grid textAlign='center' columns={3}>
-                <Grid.Row>
-                <Grid.Column color='grey'>
-                    <Menu fluid vertical>
-                    <Menu.Item className='header'>TODO</Menu.Item>
-                    <Menu.Item>
-                    {prop.taskList.list.filter(t => t.status === 'TODO').map(p =>
-                        <ul key={p.id}>
-                        <Card color='red'>
-                            <Card.Content>
-                                <Card.Header content={p.subject} />
-                                <Card.Meta content={p.description} />
-                                <Card.Description content={p.estimated_hours} />
-                            </Card.Content>
-                        </Card>
-                    </ul>
-                    )}
-                    </Menu.Item>
-                    </Menu>
-                </Grid.Column>
-                <Grid.Column color='teal'>
-                    <Menu fluid vertical>
-                    <Menu.Item className='header'>DOING</Menu.Item>
-                    <Menu.Item>
-                    {prop.taskList.list.filter(t => t.status === 'DOING').map(p =>
-                        <ul key={p.id}>
-                        <Card>
-                            <Card.Content>
-                                <Card.Header content={p.subject} />
-                                <Card.Meta content={p.description} />
-                                <Card.Description content={p.estimated_hours} />
-                            </Card.Content>
-                        </Card>
-                    </ul>
-                    )}
-                    </Menu.Item>
-                    </Menu>
-                </Grid.Column>
-                <Grid.Column color='orange'>
-                    <Menu fluid vertical>
-                    <Menu.Item className='header'>DONE</Menu.Item>
-                    <Menu.Item>
-                    {prop.taskList.list.filter(t => t.status === 'DONE').map(p =>
-                        <ul key={p.id}>
-                        <Card>
-                            <Card.Content>
-                                <Card.Header content={p.subject} />
-                                <Card.Meta content={p.description} />
-                                <Card.Description content={p.estimated_hours} />
-                            </Card.Content>
-                        </Card>
-                    </ul>
-                    )}
-                    </Menu.Item>
-                    </Menu>
-                </Grid.Column>
-                </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column color='grey'>
+                            <Menu fluid vertical>
+                                <Menu.Item className='header'>TODO</Menu.Item>
+                                <Menu.Item>
+                                    {prop.taskList.list.filter(t => t.status === 'TODO').map(p =>
+                                    <ul key={p.id}>
+                                        <Card>
+                                            <Card.Content>
+                                                <Card.Header content={p.subject} />
+                                                <Card.Meta content={p.description} />
+                                                <Card.Description content={p.estimated_hours} />
+                                            </Card.Content>
+                                        </Card>
+                                    </ul>
+                                    )}
+                                </Menu.Item>
+                            </Menu>
+                        </Grid.Column>
+                        <Grid.Column color='teal'>
+                            <Menu fluid vertical>
+                                <Menu.Item className='header'>DOING</Menu.Item>
+                                <Menu.Item>
+                                    {prop.taskList.list.filter(t => t.status === 'DOING').map(p =>
+                                    <ul key={p.id}>
+                                        <Card>
+                                            <Card.Content>
+                                                <Card.Header content={p.subject} />
+                                                <Card.Meta content={p.description} />
+                                                <Card.Description content={p.estimated_hours} />
+                                            </Card.Content>
+                                        </Card>
+                                    </ul>
+                                    )}
+                                </Menu.Item>
+                            </Menu>
+                        </Grid.Column>
+                        <Grid.Column color='orange'>
+                            <Menu fluid vertical>
+                                <Menu.Item className='header'>DONE</Menu.Item>
+                                <Menu.Item>
+                                    {prop.taskList.list.filter(t => t.status === 'DONE').map(p =>
+                                    <ul key={p.id}>
+                                        <Card>
+                                            <Card.Content>
+                                                <Card.Header content={p.subject} />
+                                                <Card.Meta content={p.description} />
+                                                <Card.Description content={p.estimated_hours} />
+                                            </Card.Content>
+                                        </Card>
+                                    </ul>
+                                    )}
+                                </Menu.Item>
+                            </Menu>
+                        </Grid.Column>
+                    </Grid.Row>
                 </Grid>
             </ul>
         )}
