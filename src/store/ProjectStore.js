@@ -2,14 +2,22 @@ import { ReduceStore } from 'flux/utils';
 
 import RascaloidDispatcher from '../dispatcher';
 import { Project, ProjectList } from '../model/ProjectModel';
+import ActionTypes from '../action-types';
 
 class ProjectStore extends ReduceStore {
     getInitialState() {
         let projectList = ProjectList.empty()
-                            .add(Project.create('testProject1'))
-                            .add(Project.create('testProject2'))
-                            .add(Project.create('testProject3'))
         return projectList;
+    }
+    reduce(state, { type, payload }) {
+        switch (type) {
+            case ActionTypes.FETCH_TITLE: {
+                const { projects } = payload;
+                return projects;
+            }
+            default:
+                return state;
+        }
     }
 }
 

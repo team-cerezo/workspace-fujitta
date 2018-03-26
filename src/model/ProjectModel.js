@@ -11,8 +11,6 @@ class Project {
     }
 }
 
-//ProjectListに引数としてlistを渡すと、ProjectListにその中身がはいる⇒わかる
-//ProjectList型リスト.listでリストそのものが取り出せる⇒わからない！！！！！！！
 class ProjectList {
     constructor(list) {
         this.list = list;

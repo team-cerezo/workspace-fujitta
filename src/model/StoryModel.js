@@ -36,6 +36,9 @@ class Task {
     static create( subject, description, estimated_hours, status ) {
         return new Task(++Task.idGenerator, subject, description, estimated_hours, status);
     }
+    static edit (subject, description, estimated_hours, status ) {
+        return new Task( this.id, subject, description, estimated_hours, status );
+    }
     setStatus(status) {
         return new Task(this.id, this.subject, this.description, this.estimated_hours, status)
     }
@@ -50,6 +53,14 @@ class TaskList {
     }
     add(task) {
         return new TaskList([task,...this.list]);
+    }
+    edit(id, subject, description, estimated_hours, status) {
+        return new TaskList(this.list.map(task => {
+            if (task.id === id) {
+                return task.edit(subject, description, estimated_hours, status)
+            }
+            return task;
+        }));
     }
 }
 

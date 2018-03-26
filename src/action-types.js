@@ -1,3 +1,5 @@
 export default {
-    DRAG: Symbol()
+    EDIT_TASK: Symbol(),
+    ADD_TASK: Symbol(),
+    FETCH_TITLE: Symbol()
 };
