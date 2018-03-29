@@ -1,17 +1,23 @@
 import React from 'react';
 
 class Iteration {
-    constructor(id,content) {
+    constructor(id, projectId, subject, description, startOn, endOn) {
         this.id = id;
-        this.content = content;
+        this.projectId = projectId;
+        this.subject = subject;
+        this.description = description;
+        this.startOn = startOn;
+        this.endOn = endOn;
+    }
+    static create(id, projectId, subject, description, startOn, endOn) {
+        return new Iteration(id, projectId, subject, description, startOn, endOn);
     }
     static idGenerator = 0;
-    static create(content) {
+    static add(content) {
         return new Iteration(++Iteration.idGenerator, content);
     }
 }
 
-//ProjectListに引数としてlistを渡すと、ProjectListにその中身がはいる⇒わかる
 class IterationList {
     constructor(list) {
         this.list = list;

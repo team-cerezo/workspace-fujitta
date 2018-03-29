@@ -1,13 +1,17 @@
 import React from 'react';
 
 class Project {
-    constructor(id,content) {
+    constructor(id, name, description) {
         this.id = id;
-        this.content = content;
+        this.name = name;
+        this.description = description;
+    }
+    static create(id, name, description) {
+        return new Project(id, name, description);
     }
     static idGenerator = 0;
-    static create(content) {
-        return new Project(++Project.idGenerator, content);
+    static add(name,description) {
+        return new Project(++Project.idGenerator, name, description);
     }
 }
 

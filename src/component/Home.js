@@ -5,18 +5,13 @@ import axios from 'axios';
 import {fetchProjects} from '../actions';
 import ProjectStore from '../store/ProjectStore';
 
-const Foo = () => (
-    <div>foo</div>
-);
-
-class Bar extends React.Component {
+class Fetch extends React.Component {
     render() {
         return (
-            <div>bar</div>
+            <div>Projects</div>
         );
     }
     componentDidMount() {
-        console.log('xxxxxx');
         fetchProjects();
     }
 }
@@ -24,20 +19,13 @@ class Bar extends React.Component {
 export default ({projects}) => (
     <div>
         <h1>Home</h1>
-        <Foo/>
-        <Bar/>
+        <Fetch />
         <ul>
            {projects.list.map(prop => 
                 <li key={prop.id}>
-                    <Link to={"/projects/"+prop.id}>{prop.content}</Link>
+                    <Link to={"/projects/"+prop.id}>{prop.id}</Link>{prop.name}{prop.description}
                 </li>
             )}
         </ul>
-        <Form>
-            <Form.Field>
-                <label>Register Project</label>
-                <input placeholder='projectName'/>
-            </Form.Field>
-        </Form>
     </div>
 );

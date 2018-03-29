@@ -12,8 +12,8 @@ class ProjectStore extends ReduceStore {
     reduce(state, { type, payload }) {
         switch (type) {
             case ActionTypes.FETCH_TITLE: {
-                const { projects } = payload;
-                return projects;
+                const projects = payload;
+                return projects.projectList;
             }
             default:
                 return state;
