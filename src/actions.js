@@ -8,13 +8,12 @@ import axios from './axios';
 export const fetchProjects = event => {
     axios.get('/projects')
     .then(response => {
-        let projects = response.data
-        let length = projects.length;
-        let projectList = ProjectList.empty();
-        for (let i = 0; i < length; i++){
-            let project= Project.create(projects[i].id, projects[i].name, projects[i].description);
-           projectList = projectList.add(project);
-        } 
+        const projects = response.data;
+        const reducer = (list, { id, name, description }) => {
+            const project = Project.create(id, name, description);
+            return list.add(project);
+        };
+        const projectList = projects.reduce(reducer, ProjectList.empty());
         RascaloidDispatcher.dispatch({
             type: ActionTypes.FETCH_TITLE,
             payload: { projectList }
