@@ -19,10 +19,12 @@ export default ({ projectId,iterations }) => (
     <div>
         <Fetch />
         <h1>Project {projectId}</h1>
+        <ul>
         {iterations.list.map(prop => 
                 <li key={prop.id}>
-                    <Link to={'/project/' + projectId + '/iteration/' + prop.id}>{prop.content}</Link>
+                    <Link to={'/project/' + projectId + '/iteration/' + prop.id}>{prop.description}</Link>
                 </li>
             )}
+        </ul>
     </div>
 );
